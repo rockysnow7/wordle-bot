@@ -6,7 +6,7 @@ Tested on 1000 different words, it solved 93% of them, using a mean of 4.3 guess
 
 Using Python 3.9 or higher:
 
-```console
+```shell
 # make the bot guess the word "PEACH"
 $ python3 guess.py PEACH
 # make the bot guess 50 random unique words and show the results
