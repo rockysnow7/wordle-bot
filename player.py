@@ -1,3 +1,4 @@
+import os
 import json
 import itertools
 import enchant
@@ -16,7 +17,11 @@ class Player:
         self.dictionary = enchant.Dict("en_US")
         self.alphabets = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"] * 5
         self.game = Game(word)
-    
+
+        if not os.path.isfile("memories.json"):
+            with open("memories.json", "w") as f:
+                json.dump([], f, indent=4)
+
     def get_all_memories(self) -> dict[tuple[str, str, str, str, str], str]:
         with open("memories.json", "r") as f:
             file_memories = json.load(f)
